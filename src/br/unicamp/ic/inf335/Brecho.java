@@ -21,15 +21,17 @@ public class Brecho {
         System.out.println("------------ Produtos ------------");
         imprimirProdutos(produtos);
 		
-		// Ordena produtos
-		Collections.sort(produtos);
-		
-		System.out.println("-------------------- Produtos Ordenados -------------------");
-		// Imprime produtos ordenados
-		for (int i=1; i<=produtos.size(); i++) {
-			System.out.println("Codigo = " + produtos.get(i).getCodigo() + " Nome = " + produtos.get(i).getNome() + " Valor = " + produtos.get(i).getValor());
-			i++;
-		}
+        // Ordena produtos por preço
+        Collections.sort(produtos, new Comparator<ProdutoBean>() {
+            @Override
+            public int compare(ProdutoBean p1, ProdutoBean p2) {
+                return p1.getValor().compareTo(p2.getValor());
+            }
+        });
+
+        // Imprime produtos após a ordenação
+        System.out.println("------------ Produtos Ordenados ------------");
+        imprimirProdutos(produtos);
 		
 		// Calcula Média
 		Double media = 0.0;
