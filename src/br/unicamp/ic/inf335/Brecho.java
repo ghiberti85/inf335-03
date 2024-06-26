@@ -17,10 +17,9 @@ public class Brecho {
 		produtos.add(new ProdutoBean("CD00005","Prod 5 ...", "Bla Bla Bla",9400.0,"Bla Bla Bla"));
 		produtos.add(new ProdutoBean("CD00006","Prod 6 ...", "Bla Bla Bla",1500.0,"Bla Bla Bla"));
 		
-		// Imprime produtos
-		for (int i=1; i<=produtos.size(); i++) {
-			System.out.println("Codigo = " + produtos.get(i).getCodigo() + " Nome = " + produtos.get(i).getNome() + " Valor = " + produtos.get(i).getValor());
-		}
+        // Imprime produtos antes da ordenação
+        System.out.println("------------ Produtos ------------");
+        imprimirProdutos(produtos);
 		
 		// Ordena produtos
 		Collections.sort(produtos);
@@ -32,7 +31,7 @@ public class Brecho {
 			i++;
 		}
 		
-		// Calcula M�dia
+		// Calcula Média
 		Double media = 0.0;
 		int i = 1;
 		while (i<=produtos.size()) {
