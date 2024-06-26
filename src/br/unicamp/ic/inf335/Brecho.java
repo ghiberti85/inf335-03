@@ -46,4 +46,10 @@ public class Brecho {
         return soma / produtos.size();
     }
 
+	private static void imprimirProdutos(ArrayList<ProdutoBean> produtos) {
+        for (ProdutoBean produto : produtos) {
+            System.out.println("Codigo = " + produto.getCodigo() + " Nome = " + produto.getNome() + " Valor = " + produto.getValor());
+        }
+    }
+
 }
