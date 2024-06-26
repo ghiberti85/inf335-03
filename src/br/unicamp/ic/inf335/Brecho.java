@@ -33,14 +33,17 @@ public class Brecho {
         System.out.println("------------ Produtos Ordenados ------------");
         imprimirProdutos(produtos);
 		
-		// Calcula Média
-		Double media = 0.0;
-		int i = 1;
-		while (i<=produtos.size()) {
-			media = produtos.get(i).getValor();
-		}
-		media = media / i;
-		System.out.println("Media de Valores = " + media);
-	}
+        // Calcula média dos valores
+        Double media = calcularMedia(produtos);
+        System.out.println("Media de Valores = " + media);
+    }
+
+    private static Double calcularMedia(ArrayList<ProdutoBean> produtos) {
+        Double soma = 0.0;
+        for (ProdutoBean produto : produtos) {
+            soma += produto.getValor();
+        }
+        return soma / produtos.size();
+    }
 
 }
